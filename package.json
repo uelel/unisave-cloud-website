@@ -11,6 +11,11 @@
     "src/lunr-index.json",
     "src/docs/index.html"
   ],
+  "targets": {
+    "main": {
+      "includeNodeModules": ["glightbox"]
+    }
+  },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "rm -rf dist .parcel-cache && parcel --public-url /",
@@ -22,6 +27,7 @@
     "@unisave/parcel-namer-website": "file:packages/parcel-namer-website",
     "@unisave/parcel-optimizer-website": "file:packages/parcel-optimizer-website",
     "@unisave/parcel-transformer-website": "file:packages/parcel-transformer-website",
+    "glightbox": "^3.3.0",
     "parcel": "^2.8.3",
     "posthtml-include": "^1.7.4",
     "posthtml-shorten": "^1.0.0"
