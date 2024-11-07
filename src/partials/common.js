@@ -32,3 +32,22 @@
   window.addEventListener("load", createPopup);
 
 }());
+
+
+///////////////////
+//   Glightbox   //
+///////////////////
+
+import GLightbox from 'glightbox';
+const lightbox = GLightbox({
+  selector: '.glightbox',
+  touchNavigation: true,
+  openEffect: 'zoom',
+  closeEffect: 'zoom',
+  loop: false,
+  autoplayVideos: true,
+  closeButton: true,
+  keyboardNavigation: true,
+  closeOnOutsideClick: true,
+  preload: false
+});

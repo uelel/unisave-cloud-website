@@ -23,7 +23,7 @@ And when you get stuck, feel free to ask on our [discord server](https://discord
 
 1. Go to [https://unisave.cloud/](https://unisave.cloud/).
 2. Click `Create Acccount` and fill out the form:
-    <img src="register-form.png" style="max-width: 350px">
+    <img src="register-form.png" style="max-width: 350px" class="glightbox">
 3. You will be redirected to the app at [https://unisave.cloud/app](https://unisave.cloud/app)
     <img src="your-games-screen.png" class="with-border">
 4. Click `Create new game` and type in a name.
