@@ -11,11 +11,6 @@
     "src/lunr-index.json",
     "src/docs/index.html"
   ],
-  "targets": {
-    "main": {
-      "includeNodeModules": ["glightbox"]
-    }
-  },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "rm -rf dist .parcel-cache && parcel --public-url /",
