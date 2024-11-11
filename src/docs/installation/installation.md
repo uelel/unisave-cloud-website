@@ -25,10 +25,10 @@ And when you get stuck, feel free to ask on our [discord server](https://discord
 2. Click `Create Acccount` and fill out the form:
     <img src="register-form.png" style="max-width: 350px" class="glightbox">
 3. You will be redirected to the app at [https://unisave.cloud/app](https://unisave.cloud/app)
-    <img src="your-games-screen.png" class="with-border">
+    <img src="your-games-screen.png" class="with-border glightbox">
 4. Click `Create new game` and type in a name.
 5. You will be redirected to the **Development Console** of your newly created game:
-    <img src="development-console-screen.png" class="with-border">
+    <img src="development-console-screen.png" class="with-border glightbox">
 
 Keep this page open in your browser, you will need to copy the `Game Token` and `Editor Key` to your Unity project later - see [Connect project with the cloud](#connect-project-with-the-cloud).
 
@@ -36,36 +36,36 @@ Keep this page open in your browser, you will need to copy the `Game Token` and 
 ## Import the Unity asset
 
 1. Open the [Unisave Asset](https://assetstore.unity.com/packages/slug/142705) page and click the **Add to My Assets** button:
-    <img src="asset-store-listing.png" class="with-border">
+    <img src="asset-store-listing.png" class="with-border glightbox">
 2. Open your game project in the Unity editor.
 3. Open the **Package Manager** window by going to menu `Window > Package Manager`.
 4. Open `Backend Service Unisave` asset, click on the **Download** button and then the **Import** button in the lower-left corner:
-    <img src="package-manager-listing.png">
+    <img src="package-manager-listing.png" class="glightbox">
 5. Import all the files:
-    <img src="import-dialog.png">
+    <img src="import-dialog.png" class="glightbox">
 
 
 ### Connect project with the cloud
 
 1. When the import finishes, the **Unisave Window** should open. If not, open it from the menu `Tools > Unisave > Unisave Window`:
-    <img src="unisave-window.png">
+    <img src="unisave-window.png" class="glightbox">
 2. Click on the **Cloud Connection** tab and fill out the `Game Token` and `Editor Key` from the cloud **Development Console** website (see [Create a cloud account](#create-a-cloud-account)):
-    <img src="cloud-connection-tab.png">
+    <img src="cloud-connection-tab.png" class="glightbox">
 3. The backend code (the code of your game's backend server) should be uploaded automatically, but sometimes this system gets confused (especially during configuration changes). In these cases you can go to the **Backend Code** tab, and click the manual **Upload** button:
-    <img src="backend-upload-error.png">
+    <img src="backend-upload-error.png" class="glightbox">
 4. In this case the manual upload worked and the backend code was successfully compiled. Now the automatic upload system should work, and if not, you will be notified in the Unity console. If the error persists, read the error message - you can see that (in this case) the error was due to the missing token and key.
-    <img src="backend-upload-success.png">
+    <img src="backend-upload-success.png" class="glightbox">
 
 
 ## Explore examples
 
 Now you probably have a specific problem in mind, that you wish Unisave can solve for you. Your actions now differ based on that problem. You can look at the provided examples, but it's likely your problem is very specific and there will not be an example scene for it.
 
-<img src="unisave-examples.png">
+<img src="unisave-examples.png" class="glightbox">
 
 Either way, exploring these examples will give you an idea, how to build custom systems on top of Unisave. Read the next [Start building](#start-building) section to learn about backend folders and then the [Introduction](../introduction/introduction.md) documentation page, to learn about the structure of the Unisave platform, and which systems to use to achieve what goals. Maybe you don't have to build your feature from scratch, maybe there already is a module, ready to be configured and used.
 
-<img src="email-auth-example.png">
+<img src="email-auth-example.png" class="glightbox">
 
 
 ## Start building
@@ -74,17 +74,17 @@ The Unisave platform, at the lowest-level, is a platform that runs your backend 
 
 The backend server is a piece of software, that runs in the cloud, accepts requests from your game clients (the game you build in Unity Editor), manages the data stored in the database, and communicates with external services.
 
-<img src="platform-diagram.png">
+<img src="platform-diagram.png" class="glightbox">
 
 > **Note:** You can view Unisave as a [FaaS](https://en.wikipedia.org/wiki/Function_as_a_service) service, together with a [DBaaS](https://en.wikipedia.org/wiki/Cloud_database) service, with a few other auxiliary functionalities, such as code deployment.
 
 The backend server is written in C# and is part of your Unity project. The code is placed in so-called **Backend Folders**. It's the same as having your textures in a `Textures` folder, your code in a `Scripts` folder, you will have your backend scripts in a `Backend` folder. Here is the backend folder for the `Email Authentication` example:
 
-<img src="backend-folder.png">
+<img src="backend-folder.png" class="glightbox">
 
 A backend folder can contain C# code used to accept game client requests (see [Facets](../facets.md)), code to interact with the database (see [Entities](../entities.md)), code to configure other Unisave modules (see [Bootstrappers](../bootstrapping.md)), or any other custom C# code. The only restriction is that the code cannot access client-side logic (e.g. `GameObject`s or `Component`s), because there's no such thing on the server.
 
-<img src="backend-folder-contents.png">
+<img src="backend-folder-contents.png" class="glightbox">
 
 Because these folders are automatically uploaded to the cloud and compiled, they need to be identified somehow. This is done by creating a **Backend Folder Definition File** inside of the folder. The file can be called anything, you can see it here being named `EmailAuthenticationExampleBackend`.
 
@@ -95,15 +95,15 @@ You will need at least one backend folder that contains your own backend code. E
 
 You can place it directly into your `Assets` folder. Simply create an empty folder named `Backend`:
 
-<img src="new-backend-folder.png">
+<img src="new-backend-folder.png" class="glightbox">
 
 Then enter that folder, and create a **Backend Folder Definition File** by right-clicking, and choosing `Create > Unisave > Backend Folder Definition File`. You can call the file `MyBackend`.
 
-<img src="create-bfdf-menu.png">
+<img src="create-bfdf-menu.png" class="glightbox">
 
 You can now create your own [Facets](../facets.md), [Entities](../entities.md), and other backend code in this folder.
 
-<img src="new-backend-contents.png">
+<img src="new-backend-contents.png" class="glightbox">
 
 You can now proceed onto the [Introduction](../introduction/introduction.md) page.
 
